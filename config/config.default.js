@@ -16,7 +16,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1627570829762_4306';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['errorHandler'];
 
   // add your user config here
   const userConfig = {
@@ -34,15 +34,17 @@ module.exports = appInfo => {
   config.jwt = {
     secret: 'wsm',
   };
-  config.sequelize = {
-    dialect: 'mysql',
-    database: 'root',
-    host: '47.118.56.119',
-    port: 3306,
-    username: 'root',
-    password: 'w980703',
-    timezone: '+08:00',
-  }
+  config.mysql = {
+    client: {
+      host: '47.118.56.119',
+      port: '3306',
+      user: 'root',
+      password: 'w980703',
+      database: 'egg',
+    },
+    app: true,
+    agent: false,
+  };
   return {
     ...config,
     ...userConfig,
