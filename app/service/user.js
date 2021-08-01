@@ -10,11 +10,15 @@ class UserService extends Service {
     return { user };
   }
   async delData(id) {
-    const user = await this.app.mysql.delete('users',{ id });
+    const user = await this.app.mysql.delete('users', { id });
     return { user };
   }
   async updateData(rows) {
-    const user = await this.app.mysql.update('users',rows);
+    const user = await this.app.mysql.update('users', rows);
+    return { user };
+  }
+  async createData(rows) {
+    const user = await this.app.mysql.insert('users', rows);
     return { user };
   }
 }

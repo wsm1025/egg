@@ -14,8 +14,12 @@ module.exports = {
     enable: true,
     package: 'egg-jwt',
   },
-  mysql:{
+  mysql: {
     enable: true,
     package: 'egg-mysql',
+  },
+  validate: {
+    enable: true,
+    package: 'egg-validate',
   },
 };

@@ -5,6 +5,7 @@
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
+const path = require('path');
 module.exports = appInfo => {
   /**
    * built-in config
@@ -44,6 +45,10 @@ module.exports = appInfo => {
     },
     app: true,
     agent: false,
+  };
+  config.static = {
+    prefix: '/',
+    dir: path.join(appInfo.baseDir, 'app/public'),
   };
   return {
     ...config,
